@@ -48,7 +48,7 @@ def login():
         else:
             break
 #购票
-def huoche():
+def train():
     global b
     #使用splinter打开chrome浏览器
     b = Browser(driver_name="chrome")
@@ -128,4 +128,4 @@ def huoche():
 
 
 if __name__ == "__main__":
-    huoche()
+    train()
