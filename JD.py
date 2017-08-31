@@ -42,5 +42,9 @@ def buy_on_time(buytime):
 
 
 # entrance  用户名，密码
-login('***', '***')
-buy_on_time('2017-08-31 20:06:00')
+
+if __name__ == '__main__':
+    #登陆
+    login('***', '***')
+    #指定下单时间
+    buy_on_time('2017-08-31 20:06:00')
