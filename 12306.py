@@ -10,7 +10,7 @@ import traceback
 username = u"***"
 passwd = u"***"
 
-# 起始地址的cookies值要自己去找, 下面两个分别是杭州, 达州。如何找，在参考文献里有简单的介绍
+# 起始地址的cookies值要自己去找, 下面两个分别是上海, 合肥
 # starts = u"%u676D%u5DDE%2CHZH"
 # ends = u"%u8FBE%u5DDE%2CRXW"
 
@@ -35,7 +35,7 @@ def login():
     b.find_by_text(u"登录").click()
     sleep(3)
 
-#第17至20行代码用于自动登录，username是12306账号名，passwd是12306密码
+    #username是12306账号名，passwd是12306密码
     b.fill("loginUserDTO.user_name", username)
     sleep(1)
     b.fill("userDTO.password", passwd)
@@ -64,9 +64,8 @@ def train():
         print (u"购票页面...")
         # 跳回购票页面
         b.visit(ticket_url)
-
         # 加载查询信息
-        #我们的模拟登录中以上海为始发站，营口东为终点站，时间选定2017年1月13日
+        #我们的模拟登录中以上海为始发站，合肥南为终点站，时间选定2017年9月25日
         b.cookies.add({"_jc_save_fromStation": starts})
         b.cookies.add({"_jc_save_toStation": ends})
         b.cookies.add({"_jc_save_fromDate": dtime})
@@ -113,15 +112,14 @@ def train():
         while True:
             try:
                 # 确认下订单
-                # b.find_by_id('qr_submit_id').click()
+                b.find_by_id('qr_submit_id').click()
                 print('下订单完成....')
                 break
             except Exception as ee:  # here you can add the sepcific exception
                 print("ElementNotVisibleException")
 
-        #如果你运气不好，程序会给出一个这样的信息：
-        print  (u"能做的都做了.....不再对浏览器进行任何操作")
-        #如果出现这样的信息，你也不要灰心，重新执行程序，让好运降临！
+        #程序结束
+        print  (u"执行操作完毕...")
         # b.quit()
     except Exception as e:
         print(traceback.print_exc())
