@@ -41,6 +41,6 @@ def buy_on_time(buytime):
         count += 1
 
 
-# entrance
+# entrance  用户名，密码
 login('***', '***')
 buy_on_time('2017-08-31 20:06:00')
