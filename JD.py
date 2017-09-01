@@ -44,6 +44,7 @@ def buy_on_time(buytime):
 # entrance  用户名，密码
 
 if __name__ == '__main__':
+
     #登陆
     login('***', '***')
     #指定下单时间
